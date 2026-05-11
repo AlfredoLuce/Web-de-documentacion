@@ -1,0 +1,16 @@
+# Application properties (no subir a GitHub)
+application.properties
+src/main/resources/application.properties
+
+# Maven
+target/
+*.jar
+
+# Node/npm
+node_modules/
+*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent UI Phase 3</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="panel panel-main" aria-label="Panel principal de tareas">
+      <div class="panel-header">
+        <h1>Tablero de Tareas</h1>
+        <p>Vista principal del proyecto para planificar, crear y revisar trabajo.</p>
+      </div>
+
+      <form id="task-form" class="task-form">
+        <div class="field field-full">
+          <label for="title">Titulo de la tarea</label>
+          <input id="title" type="text" placeholder="Ej: Implementar validacion de login" required>
+        </div>
+
+        <div class="field">
+          <label for="assignee">Responsable</label>
+          <input id="assignee" type="text" placeholder="Ej: Ana Lopez">
+        </div>
+
+        <div class="field">
+          <label for="storyPoints">Story points</label>
+          <input id="storyPoints" type="number" min="1" placeholder="3">
+        </div>
+
+        <div class="field field-full">
+          <label for="sprintName">Sprint</label>
+          <input id="sprintName" type="text" placeholder="Ej: Sprint 8">
+        </div>
+
+        <button class="primary-action" type="submit">Crear tarea</button>
+      </form>
+
+      <div class="task-toolbar">
+        <button id="refresh-tasks" type="button">Actualizar lista</button>
+      </div>
+
+      <div id="task-list" class="task-list"></div>
+    </section>
+
+    <section class="panel chat-panel panel-assistant" aria-label="Asistente lateral">
+      <div class="panel-header">
+        <h2>Asistente</h2>
+        <p>Panel de apoyo para consultar estado, sprint y carga del equipo.</p>
+      </div>
+
+      <div class="chat-shell" role="region" aria-label="Conversacion">
+        <div id="chat-messages" class="chat-messages"></div>
+
+        <form id="chat-form" class="chat-form chat-composer">
+          <label class="visually-hidden" for="chat-input">Escribe tu mensaje</label>
+          <input id="chat-input" type="text" placeholder="Escribe un mensaje" required>
+          <button class="send-button" type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js?v=20260420"></script>
+</body>
+</html>
+
